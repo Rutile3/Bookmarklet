@@ -7,5 +7,6 @@ javascript: (function () {
   card_text.split("\n").forEach( function(value) {
     result += "> " + value + "\n"
   });
+  result += "> [" + location.href + " 遊戯王Wikiより転載" + "]\n"
   location.href = "https://scrapbox.io/RutileYugioh/" + page_title + "?body=" + encodeURIComponent(result);
 })();
