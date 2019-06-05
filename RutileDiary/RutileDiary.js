@@ -1,10 +1,10 @@
-javascript: (function () {
+(function () {
   const project_url = "RutileDiary";
 
   const date = new Date();
-  const yyyy = date.getFullYear();
+  const yy = ("00" +  date.getFullYear()  ).slice(-2);
   const mm = ("00" + (date.getMonth() + 1)).slice(-2);
   const dd = ("00" +  date.getDate()      ).slice(-2);
 
-  location.href = "https://scrapbox.io/" + project_url + "/" + yyyy + mm + dd;
+  location.href = "https://scrapbox.io/" + project_url + "/" + yy + mm + dd;
 })();
