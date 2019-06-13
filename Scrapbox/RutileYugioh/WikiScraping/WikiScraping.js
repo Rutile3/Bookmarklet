@@ -1,4 +1,3 @@
-YugiohWikiScraping
 javascript: (function () {
   const page_title_tmp = document.querySelector("#header > h1 > a").innerHTML;
   const page_title = encodeURIComponent(page_title_tmp.replace(/《/g, "").replace(/》/g, ""));
