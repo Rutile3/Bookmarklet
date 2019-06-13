@@ -30,7 +30,7 @@
   }
 
   body += "\n" + prev_and_next_month + "\n\n";
-  body += "#月予定表"
+  body += "#月予定表\n"
 
   location.href = "https://scrapbox.io/" + project_url + "/" + today_yymm + "?body=" + encodeURIComponent(body);
 })();
