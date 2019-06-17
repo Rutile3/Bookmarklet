@@ -1,7 +1,7 @@
 (function () {
   const project_url = "RutileDiary";
 
-  const day_of_week = [ "日", "月", "火", "水", "木", "金", "土" ]
+  const day_of_week = [ "日", "月", "火", "水", "木", "金", "土" ];
   function getDayOfWeek(day) {return day_of_week[day] }
   function getYY(date) { return (""  + (date.getFullYear() )).slice(-2); }
   function getMM(date) { return ("0" + (date.getMonth() + 1)).slice(-2); }
