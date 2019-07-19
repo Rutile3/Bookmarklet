@@ -2,10 +2,11 @@
   const project_url = "RutileDiary";
 
   const day_of_week = ["日", "月", "火", "水", "木", "金", "土"];
-  function getDayOfWeek(day) { return day_of_week[day]; }
+  function getWeek(date) { return day_of_week[date.getDay()]; }
   function getYY(date) { return (""  + (date.getFullYear() )).slice(-2); }
   function getMM(date) { return ("0" + (date.getMonth() + 1)).slice(-2); }
   function getYYMM(date) { return getYY(date) + getMM(date); }
+  function getMonthDays(date) { return new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate(); }
 
   // 今月
   const today = new Date();
@@ -23,11 +24,12 @@
 
   // カレンダー
   body += "[*** 20" + today_yy + "年" + today_mm + "月]\n";
-  for (let i = 1; i <= new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate(); i++) {
+  const month_days = getMonthDays(today);
+  for (let i = 1; i <= month_days; i++) {
     const tmp_date = new Date(today.getFullYear(), today.getMonth(), i);
     const tmp_dd = ("0" + i).slice(-2);
     body += "[" + today_yymm + tmp_dd + "] ";
-    body += getDayOfWeek(tmp_date.getDay()) + " \n";
+    body += getWeek(tmp_date) + " \n";
   }
 
   body += "\n" + last_and_next_month + "\n\n";
