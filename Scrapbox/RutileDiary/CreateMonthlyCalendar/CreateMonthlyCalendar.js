@@ -7,21 +7,21 @@
   function getMM(date) { return ("0" + (date.getMonth() + 1)).slice(-2); }
   function getYYMM(date) { return getYY(date) + getMM(date); }
 
-  //今月
+  // 今月
   const today = new Date();
   const today_yy = getYY(today);
   const today_mm = getMM(today);
   const today_yymm = today_yy + today_mm;
 
-  //先月の翌月
-  const prev_month = new Date();
+  // 先月の来月
+  const last_month = new Date();
   const next_month = new Date();
-  prev_month.setMonth(today.getMonth() - 1);
+  last_month.setMonth(today.getMonth() - 1);
   next_month.setMonth(today.getMonth() + 1);
-  const prev_and_next_month = "[" + getYYMM(prev_month) + "]←→[" + getYYMM(next_month) + "]";
-  let body = prev_and_next_month + "\n\n";
+  const last_and_next_month = "[" + getYYMM(last_month) + "]←→[" + getYYMM(next_month) + "]";
+  let body = last_and_next_month + "\n\n";
 
-  //カレンダー
+  // カレンダー
   body += "[*** 20" + today_yy + "年" + today_mm + "月]\n";
   for (let i = 1; i <= new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate(); i++) {
     const tmp_date = new Date(today.getFullYear(), today.getMonth(), i);
@@ -30,7 +30,7 @@
     body += getDayOfWeek(tmp_date.getDay()) + " \n";
   }
 
-  body += "\n" + prev_and_next_month + "\n\n";
+  body += "\n" + last_and_next_month + "\n\n";
   body += "#月予定表\n";
 
   location.href = "https://scrapbox.io/" + project_url + "/" + today_yymm + "?body=" + encodeURIComponent(body);
