@@ -23,9 +23,10 @@
 
   //カレンダー
   body += "[*** 20" + today_yy + "年" + today_mm + "月]\n"
-  for (let i = 1; i <= new Date(today_yy, today_mm, 0).getDate(); i++) {
-      const tmp_date = new Date(today_yy, today_mm, i);
-      body += "[" + today_yymm + ("0" + i).slice(-2) + "] ";
+  for (let i = 1; i <= new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate(); i++) {
+      const tmp_date = new Date(today.getFullYear(), today.getMonth(), i);
+      const tmp_dd = ("0" + i).slice(-2);
+      body += "[" + today_yymm + tmp_dd + "] ";
       body += getDayOfWeek(tmp_date.getDay()) + " \n";
   }
 
