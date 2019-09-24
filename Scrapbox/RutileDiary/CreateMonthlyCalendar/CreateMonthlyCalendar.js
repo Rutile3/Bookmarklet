@@ -19,7 +19,7 @@
   const next_month = new Date();
   last_month.setMonth(today.getMonth() - 1);
   next_month.setMonth(today.getMonth() + 1);
-  const last_and_next_month = "[" + getYYMM(last_month) + "]←→[" + getYYMM(next_month) + "]";
+  const last_and_next_month = "[**** [" + getYYMM(last_month) + "]←→[" + getYYMM(next_month) + "]]";
   let body = last_and_next_month + "\n\n";
 
   // カレンダー
